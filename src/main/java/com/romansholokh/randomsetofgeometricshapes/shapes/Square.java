@@ -1,6 +1,7 @@
 package com.romansholokh.randomsetofgeometricshapes.shapes;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Square implements GeometricShape {
 
@@ -8,8 +9,12 @@ public class Square implements GeometricShape {
     private double area;
     private Color color;
 
+//    For my case accept the side of the square from 0.1 to 100
     public double getSideLength() {
-        return sideLength;
+        double minLimit = 0.1D;
+        double maxLimit = 100D;
+
+        return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
     }
 
     @Override
