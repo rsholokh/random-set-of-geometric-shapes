@@ -31,4 +31,11 @@ public class SquareTest {
         Assert.assertEquals("Area calculated incorrectly: " + returnedArea,
                 returnedSideLength * returnedSideLength, returnedArea, 0);
     }
+
+    @Test
+    public void testGenerateColor() {
+        String returnedColor = square.getColor();
+
+        Assert.assertNotNull("Color field is null: " + returnedColor, returnedColor);
+    }
 }

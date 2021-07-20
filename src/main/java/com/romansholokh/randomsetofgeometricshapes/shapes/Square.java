@@ -1,5 +1,7 @@
 package com.romansholokh.randomsetofgeometricshapes.shapes;
 
+import com.romansholokh.randomsetofgeometricshapes.util.colorgenerator.ColorGenerator;
+
 import java.awt.*;
 import java.util.Random;
 
@@ -7,12 +9,12 @@ public class Square implements GeometricShape {
 
     private final double sideLength;
     private final double area;
-    private String color;
+    private final String color;
 
     public Square() {
         this.sideLength = generateSideLength();
         this.area = generateArea();
-
+        this.color = generateColor();
     }
 
     public double getSideLength() {
@@ -39,6 +41,8 @@ public class Square implements GeometricShape {
         return sideLength * sideLength;
     }
 
-
+    private String generateColor() {
+        return ColorGenerator.getRandomColor().toString();
+    }
 
 }
