@@ -5,25 +5,40 @@ import java.util.Random;
 
 public class Square implements GeometricShape {
 
-    private double sideLength;
-    private double area;
-    private Color color;
+    private final double sideLength;
+    private final double area;
+    private String color;
 
-//    For my case accept the side of the square from 0.1 to 100
+    public Square() {
+        this.sideLength = generateSideLength();
+        this.area = generateArea();
+
+    }
+
     public double getSideLength() {
+        return sideLength;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    //    For my case accept side of the square from 0.1 to 100
+    private double generateSideLength() {
         double minLimit = 0.1D;
         double maxLimit = 100D;
 
         return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
     }
 
-    @Override
-    public double getArea() {
-        return area;
+    private double generateArea() {
+        return sideLength * sideLength;
     }
 
-    @Override
-    public Color getColor() {
-        return color;
-    }
+
+
 }
