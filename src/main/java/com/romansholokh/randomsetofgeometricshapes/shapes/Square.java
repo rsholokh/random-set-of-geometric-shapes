@@ -45,4 +45,11 @@ public class Square implements GeometricShape {
         return ColorGenerator.getRandomColor().toString();
     }
 
+    @Override
+    public String toString() {
+        return "Shape: square" +
+                ", side length: " + sideLength + " pts" +
+                ", area: " + area + " sq. pts" +
+                ", color: " + color;
+    }
 }
