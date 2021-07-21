@@ -13,6 +13,7 @@ public class Triangle implements GeometricShape {
     public Triangle() {
         this.cathetusA = generateCathetus();
         this.cathetusB = generateCathetus();
+        this.hypotenuse = generateHypotenuse();
     }
 
     public double getCathetusA() {
@@ -41,5 +42,9 @@ public class Triangle implements GeometricShape {
         double maxLimit = 150D;
 
         return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
+    }
+
+    private double generateHypotenuse() {
+        return Math.sqrt(Math.pow(getCathetusA(), 2) + Math.pow(getCathetusB(), 2));
     }
 }

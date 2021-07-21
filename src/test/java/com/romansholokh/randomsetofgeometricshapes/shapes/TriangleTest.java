@@ -4,8 +4,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class TriangleTest {
 
     Triangle triangle;
@@ -29,5 +27,19 @@ public class TriangleTest {
 
         Assert.assertTrue("Cathetus B length is out of range: " + returnedCathetusB,
                 min <= returnedCathetusB && returnedCathetusB <= max);
+    }
+
+    @Test
+    public void testGenerateHypotenuse() {
+        double returnedCathetusA = triangle.getCathetusA();
+        double returnedCathetusB = triangle.getCathetusB();
+        double returnedHypotenuse = triangle.getHypotenuse();
+
+        System.out.println("Cathetus A = " + returnedCathetusA + " / "
+                + "Cathetus B = " + returnedCathetusB + " / "
+                + "Hypotenuse = " + returnedHypotenuse);
+
+        Assert.assertEquals("Hypotenuse calculated incorrectly: " + returnedHypotenuse,
+                Math.pow((returnedCathetusA * returnedCathetusA) + (returnedCathetusB * returnedCathetusB), 0.5), returnedHypotenuse, 0);
     }
 }
