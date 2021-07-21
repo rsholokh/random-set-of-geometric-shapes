@@ -40,10 +40,6 @@ public class Square implements GeometricShape {
         return Math.pow(getSideLength(), 2);
     }
 
-    private String generateColor() {
-        return ColorGenerator.getRandomColor().toString();
-    }
-
     @Override
     public String toString() {
         return "Shape: square" +
