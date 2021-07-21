@@ -14,6 +14,7 @@ public class Triangle implements GeometricShape {
         this.cathetusA = generateCathetus();
         this.cathetusB = generateCathetus();
         this.hypotenuse = generateHypotenuse();
+        this.area = generateArea();
     }
 
     public double getCathetusA() {
@@ -46,5 +47,9 @@ public class Triangle implements GeometricShape {
 
     private double generateHypotenuse() {
         return Math.sqrt(Math.pow(getCathetusA(), 2) + Math.pow(getCathetusB(), 2));
+    }
+
+    private double generateArea() {
+        return 0.5 * getCathetusA() * getCathetusB();
     }
 }

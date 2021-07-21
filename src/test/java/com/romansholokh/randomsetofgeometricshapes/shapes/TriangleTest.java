@@ -42,4 +42,19 @@ public class TriangleTest {
         Assert.assertEquals("Hypotenuse calculated incorrectly: " + returnedHypotenuse,
                 Math.pow((returnedCathetusA * returnedCathetusA) + (returnedCathetusB * returnedCathetusB), 0.5), returnedHypotenuse, 0);
     }
+
+    @Test
+    public void testGenerateArea() {
+        double returnedCathetusA = triangle.getCathetusA();
+        double returnedCathetusB = triangle.getCathetusB();
+        double returnedArea = triangle.getArea();
+
+        System.out.println("Cathetus A = " + returnedCathetusA + " / "
+                + "Cathetus B = " + returnedCathetusB  + " / "
+                + "Area = " + returnedArea);
+
+        Assert.assertEquals("Area calculated incorrectly: " + returnedArea,
+                0.5 * (returnedCathetusA * returnedCathetusB), returnedArea, 0);
+    }
+
 }
