@@ -26,4 +26,13 @@ public class CircleTest {
         Assert.assertTrue("Radius is out of range: " + returnedRadius,
                 min <= returnedRadius && returnedRadius <= max);
     }
+
+    @Test
+    public void testGenerateArea() {
+        double returnedRadius = circle.getRadius();
+        double returnedArea = circle.getArea();
+
+        Assert.assertEquals("Area calculated incorrectly: " + returnedArea,
+                Math.PI * (returnedRadius * returnedRadius), returnedArea, 0);
+    }
 }

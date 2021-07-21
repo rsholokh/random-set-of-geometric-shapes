@@ -5,11 +5,12 @@ import java.util.Random;
 public class Circle implements GeometricShape{
 
     private final double radius;
-    private double area;
+    private final double area;
     private String color;
 
     public Circle() {
         this.radius = generateRadius();
+        this.area = generateArea();
     }
 
     public double getRadius() {
@@ -32,5 +33,8 @@ public class Circle implements GeometricShape{
         return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
     }
 
+    private double generateArea() {
+        return Math.PI * Math.pow(getRadius(), 2);
+    }
 
 }
