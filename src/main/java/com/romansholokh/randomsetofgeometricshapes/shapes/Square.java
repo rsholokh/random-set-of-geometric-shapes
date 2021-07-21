@@ -37,7 +37,7 @@ public class Square implements GeometricShape {
     }
 
     private double generateArea() {
-        return sideLength * sideLength;
+        return Math.pow(getSideLength(), 2);
     }
 
     private String generateColor() {
