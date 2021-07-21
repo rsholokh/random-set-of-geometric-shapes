@@ -35,4 +35,11 @@ public class CircleTest {
         Assert.assertEquals("Area calculated incorrectly: " + returnedArea,
                 Math.PI * (returnedRadius * returnedRadius), returnedArea, 0);
     }
+
+    @Test
+    public void testGenerateColor() {
+        String returnedColor = circle.getColor();
+
+        Assert.assertNotNull("Color field is null: " + returnedColor, returnedColor);
+    }
 }

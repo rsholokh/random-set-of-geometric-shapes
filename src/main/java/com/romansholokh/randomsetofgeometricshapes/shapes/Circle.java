@@ -6,11 +6,12 @@ public class Circle implements GeometricShape{
 
     private final double radius;
     private final double area;
-    private String color;
+    private final String color;
 
     public Circle() {
         this.radius = generateRadius();
         this.area = generateArea();
+        this.color = generateColor();
     }
 
     public double getRadius() {
@@ -35,6 +36,14 @@ public class Circle implements GeometricShape{
 
     private double generateArea() {
         return Math.PI * Math.pow(getRadius(), 2);
+    }
+
+    @Override
+    public String toString() {
+        return "Shape: circle" +
+                ", radius: " + radius + " pts" +
+                ", area: " + area + " sq. pts" +
+                ", color: " + color;
     }
 
 }
