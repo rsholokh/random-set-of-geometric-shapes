@@ -57,4 +57,11 @@ public class TriangleTest {
                 0.5 * (returnedCathetusA * returnedCathetusB), returnedArea, 0);
     }
 
+    @Test
+    public void testGenerateColor() {
+        String returnedColor = triangle.getColor();
+
+        Assert.assertNotNull("Color field is null: " + returnedColor, returnedColor);
+    }
+
 }

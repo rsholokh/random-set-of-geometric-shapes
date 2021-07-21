@@ -15,6 +15,7 @@ public class Triangle implements GeometricShape {
         this.cathetusB = generateCathetus();
         this.hypotenuse = generateHypotenuse();
         this.area = generateArea();
+        this.color = generateColor();
     }
 
     public double getCathetusA() {
@@ -51,5 +52,13 @@ public class Triangle implements GeometricShape {
 
     private double generateArea() {
         return 0.5 * getCathetusA() * getCathetusB();
+    }
+
+    @Override
+    public String toString() {
+        return "Shape: triangle" +
+                ", hypotenuse: " + hypotenuse + " pts" +
+                ", area: " + area + " sq. pts" +
+                ", color: " + color;
     }
 }
