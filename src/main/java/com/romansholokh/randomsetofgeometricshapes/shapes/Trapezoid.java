@@ -8,8 +8,8 @@ public class Trapezoid {
     private final double baseB;
     private final double legAOrHeight;
     private final double legB;
-    private double midline;
-    private double area;
+    private final double midline;
+    private final double area;
     private String color;
 
     public Trapezoid() {
@@ -17,6 +17,8 @@ public class Trapezoid {
         this.baseB = generateBasesAndHeight();
         this.legAOrHeight = generateBasesAndHeight();
         this.legB = generateLegB();
+        this.midline = generateMidline();
+        this.area = generatedArea();
 
     }
 
@@ -62,6 +64,10 @@ public class Trapezoid {
 
     private double generateMidline() {
         return (getBaseA() + getBaseB()) / 2;
+    }
+
+    private double generatedArea() {
+        return 0.5 * (getBaseA() + getBaseB()) * getLegAOrHeight();
     }
 
 }

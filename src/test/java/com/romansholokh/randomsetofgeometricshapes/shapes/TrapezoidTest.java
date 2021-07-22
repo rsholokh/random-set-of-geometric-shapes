@@ -69,4 +69,22 @@ public class TrapezoidTest {
         Assert.assertEquals("Midline calculated incorrectly: " + expectedMidline,
                 (testBaseA + testBaseB) / 2, expectedMidline, 0.001);
     }
+
+    @Test
+    public void testGeneratedArea() {
+        double testBaseA = 5D;
+        double testBaseB = 10D;
+        double testLegAOrHeight = 15D;
+
+        double expectedArea = 112.5;
+
+        System.out.println("Base A = " + testBaseA + " / "
+                + "Base B = " + testBaseB + " / "
+                + "Height = " + testLegAOrHeight + " / "
+                + "Area = " + expectedArea);
+
+        Assert.assertEquals("Area calculated incorrectly: " + expectedArea,
+                0.5 * (testBaseA + testBaseB) * testLegAOrHeight, expectedArea, 0.001);
+
+    }
 }
