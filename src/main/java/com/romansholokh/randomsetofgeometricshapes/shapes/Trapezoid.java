@@ -2,7 +2,7 @@ package com.romansholokh.randomsetofgeometricshapes.shapes;
 
 import java.util.Random;
 
-public class Trapezoid {
+public class Trapezoid implements GeometricShape{
 
     private final double baseA;
     private final double baseB;
@@ -11,7 +11,7 @@ public class Trapezoid {
     private final double midline;
     private final double area;
     private final double perimeter;
-    private String color;
+    private final String color;
 
     public Trapezoid() {
         this.baseA = generateBasesAndHeight();
@@ -21,7 +21,7 @@ public class Trapezoid {
         this.midline = generateMidline();
         this.area = generatedArea();
         this.perimeter = generatedPerimeter();
-
+        this.color = generateColor();
     }
 
     public double getBaseA() {
@@ -78,6 +78,15 @@ public class Trapezoid {
 
     private double generatedPerimeter() {
         return getBaseA() + getBaseB() + getLegAOrHeight() + getLegB();
+    }
+
+    @Override
+    public String toString() {
+        return "Shape: trapezoid" +
+                ", midline: " + midline + " pts" +
+                ", perimeter: " + perimeter + " pts" +
+                ", area: " + area + " sq. pts" +
+                ", color: " + color;
     }
 
 }

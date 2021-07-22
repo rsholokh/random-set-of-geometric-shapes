@@ -107,4 +107,11 @@ public class TrapezoidTest {
                 testBaseA + testBaseB + testLegAOrHeight + testLegB, expectedPerimeter, 0.001);
 
     }
+
+    @Test
+    public void testGenerateColor() {
+        String returnedColor = trapezoid.getColor();
+
+        Assert.assertNotNull("Color field is null: " + returnedColor, returnedColor);
+    }
 }
