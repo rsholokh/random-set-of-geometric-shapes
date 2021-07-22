@@ -87,4 +87,24 @@ public class TrapezoidTest {
                 0.5 * (testBaseA + testBaseB) * testLegAOrHeight, expectedArea, 0.001);
 
     }
+
+    @Test
+    public void testGeneratedPerimeter() {
+        double testBaseA = 5D;
+        double testBaseB = 10D;
+        double testLegAOrHeight = 15D;
+        double testLegB = 15.811;
+
+        double expectedPerimeter = 45.811;
+
+        System.out.println("Base A = " + testBaseA + " / "
+                + "Base B = " + testBaseB + " / "
+                + "Height = " + testLegAOrHeight + " / "
+                + "Leg B = " + testLegB  + " / "
+                + "Perimeter = " + expectedPerimeter);
+
+        Assert.assertEquals("Perimeter calculated incorrectly: " + expectedPerimeter,
+                testBaseA + testBaseB + testLegAOrHeight + testLegB, expectedPerimeter, 0.001);
+
+    }
 }

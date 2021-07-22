@@ -10,7 +10,7 @@ public class Trapezoid {
     private final double legB;
     private final double midline;
     private final double area;
-    private double perimeter;
+    private final double perimeter;
     private String color;
 
     public Trapezoid() {
@@ -20,6 +20,7 @@ public class Trapezoid {
         this.legB = generateLegB();
         this.midline = generateMidline();
         this.area = generatedArea();
+        this.perimeter = generatedPerimeter();
 
     }
 
@@ -73,6 +74,10 @@ public class Trapezoid {
 
     private double generatedArea() {
         return 0.5 * (getBaseA() + getBaseB()) * getLegAOrHeight();
+    }
+
+    private double generatedPerimeter() {
+        return getBaseA() + getBaseB() + getLegAOrHeight() + getLegB();
     }
 
 }
