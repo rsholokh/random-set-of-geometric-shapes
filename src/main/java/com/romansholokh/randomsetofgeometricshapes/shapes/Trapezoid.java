@@ -10,6 +10,7 @@ public class Trapezoid {
     private final double legB;
     private final double midline;
     private final double area;
+    private double perimeter;
     private String color;
 
     public Trapezoid() {
@@ -44,6 +45,10 @@ public class Trapezoid {
 
     public double getArea() {
         return area;
+    }
+
+    public double getPerimeter() {
+        return perimeter;
     }
 
     public String getColor() {
