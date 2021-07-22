@@ -23,7 +23,9 @@ public class TrapezoidTest {
         double returnedBaseB = trapezoid.getBaseB();
         double returnedHeight = trapezoid.getLegAOrHeight();
 
-        System.out.println("Base A = " + returnedBaseA + " / " + "Base B = " + returnedBaseB + " / " + "Height = " + returnedHeight);
+        System.out.println("Base A = " + returnedBaseA + " / "
+                + "Base B = " + returnedBaseB + " / "
+                + "Height = " + returnedHeight);
 
         Assert.assertTrue("Base A length is out of range: " + returnedBaseA,
                 min <= returnedBaseA && returnedBaseA <= max);
@@ -34,6 +36,22 @@ public class TrapezoidTest {
         Assert.assertTrue("Height length is out of range: " + returnedHeight,
                 min <= returnedHeight && returnedHeight <= max);
 
+    }
 
+    @Test
+    public void testGenerateLegB() {
+        double testBaseA = 5D;
+        double testBaseB = 10D;
+        double testLegAOrHeight = 15D;
+
+        double expectedLegB = 15.811;
+
+        System.out.println("Base A = " + testBaseA + " / "
+                + "Base B = " + testBaseB + " / "
+                + "Height = " + testLegAOrHeight + " / "
+                + "Leg B = " + expectedLegB);
+
+        Assert.assertEquals("Leg B calculated incorrectly: " + expectedLegB,
+                Math.sqrt(Math.pow(testLegAOrHeight, 2) + Math.pow(Math.abs(testBaseA - testBaseB), 2)), expectedLegB, 0.001);
     }
 }

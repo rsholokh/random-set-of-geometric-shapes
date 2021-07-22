@@ -7,7 +7,7 @@ public class Trapezoid {
     private final double baseA;
     private final double baseB;
     private final double legAOrHeight;
-    private double legB;
+    private final double legB;
     private double midline;
     private double area;
     private String color;
@@ -16,6 +16,7 @@ public class Trapezoid {
         this.baseA = generateBasesAndHeight();
         this.baseB = generateBasesAndHeight();
         this.legAOrHeight = generateBasesAndHeight();
+        this.legB = generateLegB();
 
     }
 
@@ -53,6 +54,10 @@ public class Trapezoid {
         double maxLimit = 200D;
 
         return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
+    }
+
+    private double generateLegB() {
+        return Math.sqrt(Math.pow(getLegAOrHeight(), 2) + Math.pow(Math.abs(getBaseA() - getBaseB()), 2));
     }
 
 }
