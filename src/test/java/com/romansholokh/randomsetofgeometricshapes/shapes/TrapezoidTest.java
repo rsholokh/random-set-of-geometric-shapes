@@ -54,4 +54,19 @@ public class TrapezoidTest {
         Assert.assertEquals("Leg B calculated incorrectly: " + expectedLegB,
                 Math.sqrt(Math.pow(testLegAOrHeight, 2) + Math.pow(Math.abs(testBaseA - testBaseB), 2)), expectedLegB, 0.001);
     }
+
+    @Test
+    public void testGenerateMidline() {
+        double testBaseA = 5D;
+        double testBaseB = 10D;
+
+        double expectedMidline = 7.5;
+
+        System.out.println("Base A = " + testBaseA + " / "
+                + "Base B = " + testBaseB + " / "
+                + "Midline = " + expectedMidline);
+
+        Assert.assertEquals("Midline calculated incorrectly: " + expectedMidline,
+                (testBaseA + testBaseB) / 2, expectedMidline, 0.001);
+    }
 }

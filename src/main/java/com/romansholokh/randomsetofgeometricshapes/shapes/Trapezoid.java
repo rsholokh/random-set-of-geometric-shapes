@@ -60,4 +60,8 @@ public class Trapezoid {
         return Math.sqrt(Math.pow(getLegAOrHeight(), 2) + Math.pow(Math.abs(getBaseA() - getBaseB()), 2));
     }
 
+    private double generateMidline() {
+        return (getBaseA() + getBaseB()) / 2;
+    }
+
 }
