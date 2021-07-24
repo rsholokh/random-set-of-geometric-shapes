@@ -1,5 +1,7 @@
 package com.romansholokh.randomsetofgeometricshapes.shapes;
 
+import com.romansholokh.randomsetofgeometricshapes.util.numbergenerator.NumberGenerator;
+
 import java.util.Random;
 
 public class Trapezoid implements GeometricShape{
@@ -58,10 +60,8 @@ public class Trapezoid implements GeometricShape{
 
     //    For my case accept bases and height from 1 to 200
     private double generateBasesAndHeight() {
-        double minLimit = 1D;
-        double maxLimit = 200D;
 
-        return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
+        return NumberGenerator.randomBoundedDouble(1D, 200D);
     }
 
     private double generateLegB() {
