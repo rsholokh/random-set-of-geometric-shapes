@@ -1,4 +1,4 @@
-package com.romansholokh.randomsetofgeometricshapes.util.colorgenerator;
+package com.romansholokh.randomsetofgeometricshapes.util.shapesetgenerator;
 
 import com.romansholokh.randomsetofgeometricshapes.shapes.GeometricShape;
 import org.junit.Assert;
