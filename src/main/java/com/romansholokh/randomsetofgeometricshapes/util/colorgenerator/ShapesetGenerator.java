@@ -14,9 +14,31 @@ public class ShapesetGenerator {
 
     private static final Reflections REFLECTIONS = new Reflections("com.romansholokh.randomsetofgeometricshapes.shapes");
     private static final Set<Class<? extends GeometricShape>> CLASSES = REFLECTIONS.getSubTypesOf(GeometricShape.class);
+    private static final Random RANDOM = new Random();
+
+    public static List<GeometricShape> generateShapeset(int maxCapacity) {
+        int shapesetSize = generateRandomInt(1, maxCapacity);
+        List<GeometricShape> listOfInstance = null;
+        try {
+            listOfInstance = convertSetOfClassesToListOfInstances(getCLASSES());
+        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        List<GeometricShape> shapeset = new ArrayList<>(shapesetSize);
+        for (int i = 0; i < shapesetSize; i++) {
+            assert listOfInstance != null;
+            shapeset.add(listOfInstance.get(getRANDOM().nextInt(listOfInstance.size())));
+        }
+
+        return shapeset;
+    }
 
     private static Set<Class<? extends GeometricShape>> getCLASSES() {
         return CLASSES;
+    }
+
+    private static Random getRANDOM() {
+        return RANDOM;
     }
 
     private static List<GeometricShape> convertSetOfClassesToListOfInstances(Set<Class<? extends GeometricShape>> CLASSES) throws

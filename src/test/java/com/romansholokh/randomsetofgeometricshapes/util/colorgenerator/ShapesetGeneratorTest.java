@@ -1,9 +1,10 @@
 package com.romansholokh.randomsetofgeometricshapes.util.colorgenerator;
 
+import com.romansholokh.randomsetofgeometricshapes.shapes.GeometricShape;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Random;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ShapesetGeneratorTest {
@@ -21,4 +22,16 @@ public class ShapesetGeneratorTest {
                 min <= generatedSizeOfShapeset && generatedSizeOfShapeset <= max);
     }
 
+    @Test
+    public void generateShapeset() {
+        int expectedMaxCapacity = 1;
+
+        List<GeometricShape> testingShapeset = ShapesetGenerator.generateShapeset(expectedMaxCapacity);
+
+        Assert.assertNotNull("Shapeset is null: " + testingShapeset, testingShapeset);
+        Assert.assertFalse("Shapeset is empty: " + testingShapeset, testingShapeset.isEmpty());
+        Assert.assertTrue("Shapeset's values have incorrect type: " + testingShapeset, testingShapeset.get(testingShapeset.size() - 1) instanceof GeometricShape);
+        Assert.assertTrue("Shapeset size is incorrect: " + testingShapeset.size(), testingShapeset.size() <= expectedMaxCapacity);
+
+    }
 }
