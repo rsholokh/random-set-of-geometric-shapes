@@ -1,5 +1,7 @@
 package com.romansholokh.randomsetofgeometricshapes.shapes;
 
+import com.romansholokh.randomsetofgeometricshapes.util.numbergenerator.NumberGenerator;
+
 import java.util.Random;
 
 public class Circle implements GeometricShape{
@@ -28,10 +30,8 @@ public class Circle implements GeometricShape{
 
     //    For my case accept radius from 0.5 to 75
     private double generateRadius() {
-        double minLimit = 0.5D;
-        double maxLimit = 75D;
 
-        return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
+        return NumberGenerator.randomBoundedDouble(0.5D, 75D);
     }
 
     private double generateArea() {

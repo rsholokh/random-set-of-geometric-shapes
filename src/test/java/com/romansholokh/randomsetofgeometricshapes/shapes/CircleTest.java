@@ -29,11 +29,11 @@ public class CircleTest {
 
     @Test
     public void testGenerateArea() {
-        double returnedRadius = circle.getRadius();
-        double returnedArea = circle.getArea();
+        double testRadius = 5D;
+        double expectedArea = 78.5398;
 
-        Assert.assertEquals("Area calculated incorrectly: " + returnedArea,
-                Math.PI * (returnedRadius * returnedRadius), returnedArea, 0);
+        Assert.assertEquals("Area calculated incorrectly: " + expectedArea,
+                Math.PI * Math.pow(testRadius, 2), expectedArea, 0.0001);
     }
 
     @Test
