@@ -59,4 +59,10 @@ public class ShapesetGenerator {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
+    public static void printShapeset(List<GeometricShape> shapeList) {
+        for (GeometricShape geometricShape : shapeList) {
+            System.out.println(geometricShape);
+        }
+    }
+
 }
