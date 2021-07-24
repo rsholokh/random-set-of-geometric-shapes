@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Triangle implements GeometricShape {
 
-    private double cathetusA;
-    private double cathetusB;
-    private double hypotenuse;
-    private double area;
-    private String color;
+    private final double cathetusA;
+    private final double cathetusB;
+    private final double hypotenuse;
+    private final double area;
+    private final String color;
 
     public Triangle() {
         this.cathetusA = generateCathetus();
