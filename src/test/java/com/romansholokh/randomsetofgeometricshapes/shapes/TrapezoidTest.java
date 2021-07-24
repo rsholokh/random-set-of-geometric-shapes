@@ -71,7 +71,7 @@ public class TrapezoidTest {
     }
 
     @Test
-    public void testGeneratedArea() {
+    public void testGenerateArea() {
         double testBaseA = 5D;
         double testBaseB = 10D;
         double testLegAOrHeight = 15D;
@@ -89,7 +89,7 @@ public class TrapezoidTest {
     }
 
     @Test
-    public void testGeneratedPerimeter() {
+    public void testGeneratePerimeter() {
         double testBaseA = 5D;
         double testBaseB = 10D;
         double testLegAOrHeight = 15D;

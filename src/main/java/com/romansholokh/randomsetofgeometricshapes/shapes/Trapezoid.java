@@ -19,8 +19,8 @@ public class Trapezoid implements GeometricShape{
         this.legAOrHeight = generateBasesAndHeight();
         this.legB = generateLegB();
         this.midline = generateMidline();
-        this.area = generatedArea();
-        this.perimeter = generatedPerimeter();
+        this.area = generateArea();
+        this.perimeter = generatePerimeter();
         this.color = generateColor();
     }
 
@@ -72,11 +72,11 @@ public class Trapezoid implements GeometricShape{
         return (getBaseA() + getBaseB()) / 2;
     }
 
-    private double generatedArea() {
+    private double generateArea() {
         return 0.5 * (getBaseA() + getBaseB()) * getLegAOrHeight();
     }
 
-    private double generatedPerimeter() {
+    private double generatePerimeter() {
         return getBaseA() + getBaseB() + getLegAOrHeight() + getLegB();
     }
 
