@@ -1,6 +1,6 @@
 package com.romansholokh.randomsetofgeometricshapes.shapes;
 
-import java.util.Random;
+import com.romansholokh.randomsetofgeometricshapes.util.numbergenerator.NumberGenerator;
 
 public class Triangle implements GeometricShape {
 
@@ -40,10 +40,8 @@ public class Triangle implements GeometricShape {
 
     //    For my case accept length of cathetus from 1 to 150
     private double generateCathetus() {
-        double minLimit = 1D;
-        double maxLimit = 150D;
 
-        return minLimit + new Random().nextDouble() * (maxLimit - minLimit);
+        return NumberGenerator.randomBoundedDouble(1D, 150D);
     }
 
     private double generateHypotenuse() {

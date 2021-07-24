@@ -31,30 +31,30 @@ public class TriangleTest {
 
     @Test
     public void testGenerateHypotenuse() {
-        double returnedCathetusA = triangle.getCathetusA();
-        double returnedCathetusB = triangle.getCathetusB();
-        double returnedHypotenuse = triangle.getHypotenuse();
+        double testCathetusA = 5D;
+        double testCathetusB = 10D;
+        double expectedHypotenuse = 11.1803D;
 
-        System.out.println("Cathetus A = " + returnedCathetusA + " / "
-                + "Cathetus B = " + returnedCathetusB + " / "
-                + "Hypotenuse = " + returnedHypotenuse);
+        System.out.println("Cathetus A = " + testCathetusA + " / "
+                + "Cathetus B = " + testCathetusB + " / "
+                + "Hypotenuse = " + expectedHypotenuse);
 
-        Assert.assertEquals("Hypotenuse calculated incorrectly: " + returnedHypotenuse,
-                Math.pow((returnedCathetusA * returnedCathetusA) + (returnedCathetusB * returnedCathetusB), 0.5), returnedHypotenuse, 0);
+        Assert.assertEquals("Hypotenuse calculated incorrectly: " + expectedHypotenuse,
+                Math.sqrt(Math.pow(testCathetusA, 2) + Math.pow(testCathetusB, 2)), expectedHypotenuse, 0.0001);
     }
 
     @Test
     public void testGenerateArea() {
-        double returnedCathetusA = triangle.getCathetusA();
-        double returnedCathetusB = triangle.getCathetusB();
-        double returnedArea = triangle.getArea();
+        double testCathetusA = 5D;
+        double testCathetusB = 10D;
+        double expectedArea = 25D;
 
-        System.out.println("Cathetus A = " + returnedCathetusA + " / "
-                + "Cathetus B = " + returnedCathetusB  + " / "
-                + "Area = " + returnedArea);
+        System.out.println("Cathetus A = " + testCathetusA + " / "
+                + "Cathetus B = " + testCathetusB  + " / "
+                + "Area = " + expectedArea);
 
-        Assert.assertEquals("Area calculated incorrectly: " + returnedArea,
-                0.5 * (returnedCathetusA * returnedCathetusB), returnedArea, 0);
+        Assert.assertEquals("Area calculated incorrectly: " + expectedArea,
+                0.5 * testCathetusA * testCathetusB, expectedArea, 0.0001);
     }
 
     @Test
