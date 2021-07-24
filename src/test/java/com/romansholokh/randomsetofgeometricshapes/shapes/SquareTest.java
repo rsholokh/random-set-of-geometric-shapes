@@ -25,11 +25,11 @@ public class SquareTest {
 
     @Test
     public void testGenerateArea() {
-        double returnedSideLength = square.getSideLength();
-        double returnedArea = square.getArea();
+        double testSideLength = 5D;
+        double expectedArea = 25D;
 
-        Assert.assertEquals("Area calculated incorrectly: " + returnedArea,
-                returnedSideLength * returnedSideLength, returnedArea, 0);
+        Assert.assertEquals("Area calculated incorrectly: " + expectedArea,
+                Math.pow(testSideLength, 2), expectedArea, 0);
     }
 
     @Test
