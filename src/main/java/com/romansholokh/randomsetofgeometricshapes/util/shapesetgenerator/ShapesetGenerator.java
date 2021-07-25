@@ -1,6 +1,7 @@
 package com.romansholokh.randomsetofgeometricshapes.util.shapesetgenerator;
 
 import com.romansholokh.randomsetofgeometricshapes.shapes.GeometricShape;
+import com.romansholokh.randomsetofgeometricshapes.util.numbergenerator.NumberGenerator;
 import org.reflections.Reflections;
 
 import java.lang.reflect.InvocationTargetException;
@@ -8,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class ShapesetGenerator {
 
@@ -17,7 +17,7 @@ public class ShapesetGenerator {
     private static final Random RANDOM = new Random();
 
     public static List<GeometricShape> generateShapeset(int maxCapacity) {
-        int shapesetSize = generateRandomInt(1, maxCapacity);
+        int shapesetSize = generateShapesetSize(1, maxCapacity);
         List<GeometricShape> listOfInstance = null;
         try {
             listOfInstance = convertSetOfClassesToListOfInstances(getCLASSES());
@@ -54,9 +54,9 @@ public class ShapesetGenerator {
 
     }
 
-    private static int generateRandomInt(int min, int max) {
+    private static int generateShapesetSize(int min, int max) {
 
-        return ThreadLocalRandom.current().nextInt(min, max + 1);
+        return NumberGenerator.randomBoundedInteger(min, max);
     }
 
     public static void printShapeset(List<GeometricShape> shapeList) {
