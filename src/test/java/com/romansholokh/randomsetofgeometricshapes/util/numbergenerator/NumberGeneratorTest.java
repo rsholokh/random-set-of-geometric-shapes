@@ -4,13 +4,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Random;
-
-import static org.junit.Assert.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class NumberGeneratorTest {
 
     @Test
-    public void randomBoundedDouble() {
+    public void testRandomBoundedDouble() {
         double expectedMin = 1D;
         double expectedMax = 1D;
 
@@ -29,5 +28,18 @@ public class NumberGeneratorTest {
 
         Assert.assertTrue("Number generated incorrectly = " + expectedGeneratedNumber
                 , expectedMin <= expectedGeneratedNumber && expectedGeneratedNumber <= expectedMax);
+    }
+
+    @Test
+    public void testRandomBoundedInteger() {
+        int min = 1;
+        int max = 2;
+
+        int generatedSizeOfShapeset = ThreadLocalRandom.current().nextInt(min, max + 1);
+
+        System.out.println("Generated size of shapeset = " + generatedSizeOfShapeset);
+
+        Assert.assertTrue("Size of shapeset is out of range: " + generatedSizeOfShapeset,
+                min <= generatedSizeOfShapeset && generatedSizeOfShapeset <= max);
     }
 }
