@@ -16,6 +16,12 @@ public class ShapesetGenerator {
     private static final Set<Class<? extends GeometricShape>> CLASSES = REFLECTIONS.getSubTypesOf(GeometricShape.class);
     private static final Random RANDOM = new Random();
 
+    /**
+     * Returns a {@code List} of random objects inherited from {@code GeometricShape}
+     * of random size between 1 (inclusive) and specified {@code maxCapacity} (inclusive)
+     *
+     * @param maxCapacity maximum possible size of a {@code List}
+     */
     public static List<GeometricShape> generateShapeset(int maxCapacity) {
         int shapesetSize = generateShapesetSize(1, maxCapacity);
         List<GeometricShape> listOfInstance = null;
@@ -59,6 +65,11 @@ public class ShapesetGenerator {
         return NumberGenerator.randomBoundedInteger(min, max);
     }
 
+    /**
+     * Outputs to the console given {@code List} of objects inherited from GeometricShape.
+     * Each object is printed on a new line
+     * @param shapeList given {@code List} of objects
+     */
     public static void printShapeset(List<GeometricShape> shapeList) {
         for (GeometricShape geometricShape : shapeList) {
             System.out.println(geometricShape);

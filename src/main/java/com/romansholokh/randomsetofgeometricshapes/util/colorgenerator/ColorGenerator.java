@@ -31,6 +31,9 @@ public enum ColorGenerator {
         this.color = color;
     }
 
+    /**
+     * @return one random color from {@code ColorGenerator} enum
+     */
     public static ColorGenerator getRandomColor() {
         return VALUES.get(RANDOM.nextInt(SIZE));
     }
