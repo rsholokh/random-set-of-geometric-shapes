@@ -1,9 +1,6 @@
 package com.romansholokh.randomsetofgeometricshapes.shapes;
 
-import com.romansholokh.randomsetofgeometricshapes.util.colorgenerator.ColorGenerator;
 import com.romansholokh.randomsetofgeometricshapes.util.numbergenerator.NumberGenerator;
-
-import java.util.Random;
 
 public class Square implements GeometricShape {
 
